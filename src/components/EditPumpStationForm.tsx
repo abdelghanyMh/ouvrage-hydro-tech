@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { PumpStation } from "./types";
+import { Label } from "@/components/ui/label";
 import { AuthContext } from "@/context/AuthContext";
+import React, { useContext, useEffect, useState } from "react";
+import { PumpStation } from "./types";
 interface EditPumpStationFormProps {
   station: PumpStation;
 }
@@ -17,6 +17,8 @@ const EditPumpStationForm: React.FC<EditPumpStationFormProps> = ({
   const [location, setLocation] = useState(station.location);
 
   const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
     const updatedStation: PumpStation = {
       id: station.id,
       name: name,
