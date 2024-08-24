@@ -1,5 +1,12 @@
 // src/components/PumpStationTable.tsx
-import React, { useEffect, useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger
+} from "@/components/ui/dialog";
 import {
   Table,
   TableBody,
@@ -9,20 +16,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import axios from "axios";
-import { Label } from "@radix-ui/react-label";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+import { AuthContext } from "@/context/AuthContext";
+import React, { useContext, useEffect } from "react";
 import ScheduleForm from "./ScheduleForm";
+import { Button } from "./ui/button";
 
 interface Schedule {
   date: string;
@@ -42,26 +39,29 @@ interface Props {
 }
 
 const PumpStationTable: React.FC<Props> = ({ onSelect }) => {
-  const [stations, setStations] = useState<PumpStation[]>([]);
-  const [selectedStation, setSelectedStation] = useState<PumpStation | null>(
-    null
-  );
+  // const [stations, setStations] = useState<PumpStation[]>([]);
+  const { stations, fetchStations } = useContext(AuthContext);
+
+  // const [selectedStation, setSelectedStation] = useState<PumpStation | null>(
+  //   null
+  // );
 
   useEffect(() => {
     fetchStations();
   }, []);
 
-  const fetchStations = async () => {
-    try {
-      const response = await axios.get("http://localhost:5000/pumpStations");
-      setStations(response.data);
-    } catch (error) {
-      console.error("Error fetching pump stations:", error);
-    }
-  };
+  // const fetchStations = async () => {
+  //   try {
+  //     const response = await axios.get("http://localhost:5000/pumpStations");
+  //     setStations(response.data);
+  //   } catch (error) {
+  //     console.error("Error fetching pump stations:", error);
+  //   }
+  // };
 
   const refreshStation = async () => {
     fetchStations();
+    
   };
 
   return (
@@ -78,7 +78,7 @@ const PumpStationTable: React.FC<Props> = ({ onSelect }) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {stations.map((station) => (
+          {stations.map((station: any) => (
             <TableRow key={station.id} onClick={() => onSelect(station)}>
               <TableCell className="font-medium">{station.id}</TableCell>
               <TableCell>{station.name}</TableCell>

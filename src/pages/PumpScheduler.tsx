@@ -1,9 +1,9 @@
 // src/pages/PumpScheduler.tsx
-import React, { useState, useEffect } from "react";
-import PumpStationTable from "../components/PumpStationTable";
-import ScheduleForm from "../components/ScheduleForm";
-import ScheduleList from "../components/ScheduleList";
+import { AuthContext } from "@/context/AuthContext";
 import axios from "axios";
+import React, { useContext, useState } from "react";
+import PumpStationTable from "../components/PumpStationTable";
+import ScheduleList from "../components/ScheduleList";
 
 interface Schedule {
   date: string;
@@ -22,22 +22,14 @@ const PumpScheduler: React.FC = () => {
   const [selectedStation, setSelectedStation] = useState<PumpStation | null>(
     null
   );
+  const { fetchStations } = useContext(AuthContext);
 
   const handleStationSelect = (station: PumpStation) => {
     setSelectedStation(station);
   };
 
   const refreshStation = async () => {
-    if (selectedStation) {
-      try {
-        const response = await axios.get(
-          `http://localhost:5000/pumpStations/${selectedStation.id}`
-        );
-        setSelectedStation(response.data);
-      } catch (error) {
-        console.error("Error refreshing station data:", error);
-      }
-    }
+    fetchStations();
   };
 
   const handleDeleteSchedule = async (index: number) => {
@@ -46,11 +38,12 @@ const PumpScheduler: React.FC = () => {
         (_, i) => i !== index
       );
       try {
-        await axios.patch(
+        const response = await axios.patch(
           `http://localhost:5000/pumpStations/${selectedStation.id}`,
           { schedule: updatedSchedules }
         );
-        refreshStation();
+        await refreshStation();
+        setSelectedStation(response.data);
       } catch (error) {
         console.error("Error deleting schedule:", error);
       }
