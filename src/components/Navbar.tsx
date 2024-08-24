@@ -19,6 +19,12 @@ const Navbar = () => {
           {user ? (
             <>
               <Link
+                to="/pump-stations "
+                className="text-gray-300 hover:text-white"
+              >
+                Pump Stations
+              </Link>
+              <Link
                 to="/pump-scheduler"
                 className="text-gray-300 hover:text-white"
               >

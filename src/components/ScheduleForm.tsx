@@ -4,20 +4,9 @@ import axios from "axios";
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
-[]
+import { PumpStation } from "./types";
 
-interface Schedule {
-  date: string;
-  startTime: string;
-  endTime: string;
-}
 
-interface PumpStation {
-  id: number;
-  name: string;
-  location: string;
-  schedule: Schedule[];
-}
 
 interface Props {
   station: PumpStation;

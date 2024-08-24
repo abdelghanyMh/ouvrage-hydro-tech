@@ -8,6 +8,7 @@ import ClientFeedback from "./pages/ClientFeedback";
 import Login from "./pages/Login";
 import { AuthContext, AuthProvider } from "./context/AuthContext";
 import Navbar from "./components/Navbar";
+import PumpStationsPage from "./pages/PumpStationsPage";
 
 const ProtectedRoute: React.FC<{ children: JSX.Element }> = ({ children }) => {
   const { user } = useContext(AuthContext);
@@ -24,6 +25,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+         <Route
+          path="/pump-stations"
+          element={
+            <ProtectedRoute>
+              <PumpStationsPage />
             </ProtectedRoute>
           }
         />

@@ -6,19 +6,8 @@ import PumpStationTable from "../components/PumpStationTable";
 import ScheduleList from "../components/ScheduleList";
 import toast, { Toaster } from "react-hot-toast";
 import { format } from "date-fns";
+import { PumpStation } from "@/components/types";
 
-interface Schedule {
-  date: string;
-  startTime: string;
-  endTime: string;
-}
-
-interface PumpStation {
-  id: number;
-  name: string;
-  location: string;
-  schedule: Schedule[];
-}
 
 const PumpScheduler: React.FC = () => {
   const [selectedStation, setSelectedStation] = useState<PumpStation | null>(

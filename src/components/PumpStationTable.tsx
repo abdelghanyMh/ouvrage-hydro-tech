@@ -20,19 +20,8 @@ import { AuthContext } from "@/context/AuthContext";
 import React, { useContext, useEffect } from "react";
 import ScheduleForm from "./ScheduleForm";
 import { Button } from "./ui/button";
+import { PumpStation } from "./types";
 
-interface Schedule {
-  date: string;
-  startTime: string;
-  endTime: string;
-}
-
-interface PumpStation {
-  id: number;
-  name: string;
-  location: string;
-  schedule: Schedule[];
-}
 
 interface Props {
   onSelect: (station: PumpStation) => void;
@@ -65,7 +54,8 @@ const PumpStationTable: React.FC<Props> = ({ onSelect }) => {
   };
 
   return (
-    <div className="overflow-x-auto">
+    <div className="p-8">
+      <h1 className="text-2xl font-bold mb-6">Pump Station Scheduler</h1>
       <Table>
         <TableCaption>A list of Pump Station Table.</TableCaption>
         <TableHeader>
