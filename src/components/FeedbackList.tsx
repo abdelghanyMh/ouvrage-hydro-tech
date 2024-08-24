@@ -1,6 +1,7 @@
 // src/components/FeedbackList.tsx
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { MessageCircleWarning, MessageSquareQuote } from "lucide-react";
 
 interface Feedback {
   id: number;
@@ -20,22 +21,27 @@ const FeedbackList: React.FC = () => {
 
   const fetchFeedbacks = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/feedback');
+      const response = await axios.get("http://localhost:5000/feedback");
       setFeedbacks(response.data);
     } catch (error) {
-      console.error('Error fetching feedbacks:', error);
+      console.error("Error fetching feedbacks:", error);
     }
   };
 
   return (
-    <div className="mt-8">
-      <h2 className="text-xl font-semibold mb-4">Submitted Feedback and Claims</h2>
+    <div className="mt-8 ">
+      <h2 className="text-xl font-semibold mb-4">
+        Submitted Feedback and Claims
+      </h2>
       {feedbacks.length === 0 ? (
         <p>No feedbacks or claims submitted yet.</p>
       ) : (
         <ul className="space-y-4">
           {feedbacks.map((fb) => (
             <li key={fb.id} className="bg-gray-100 p-4 rounded">
+              {!fb.claim && <MessageSquareQuote />}
+              {fb.claim && <MessageCircleWarning />}
+
               <p>
                 <strong>Name:</strong> {fb.clientName}
               </p>
@@ -66,4 +72,4 @@ const FeedbackList: React.FC = () => {
 };
 
 export default FeedbackList;
-[]
+[];

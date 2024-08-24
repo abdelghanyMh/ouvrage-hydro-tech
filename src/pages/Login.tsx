@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import waterIcon from "../assets/icons8-water-94.png";
+
 const Login: React.FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -28,7 +30,8 @@ const Login: React.FC = () => {
         onSubmit={handleSubmit}
         className="space-y-4 bg-white p-8 rounded shadow-md"
       >
-        <h1 className="text-2xl font-bold mb-4">Login</h1>
+        <img src={waterIcon}  className="m-auto"/>
+        <h1 className="text-2xl font-bold mb-4 text-center">Login</h1>
         {error && <p className="text-red-500">{error}</p>}
         <div>
           <Label htmlFor="username">Username</Label>

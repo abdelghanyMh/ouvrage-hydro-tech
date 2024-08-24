@@ -34,6 +34,7 @@ const ClaimsForm: React.FC = () => {
           value={clientName}
           onChange={(e) => setClientName(e.target.value)}
           required
+          className="w-[500px]"
         />
       </div>
       <div>
@@ -44,6 +45,7 @@ const ClaimsForm: React.FC = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          className="w-[500px]"
         />
       </div>
       <div>
@@ -53,6 +55,7 @@ const ClaimsForm: React.FC = () => {
           value={claim}
           onChange={(e) => setClaim(e.target.value)}
           required
+          className="w-[500px]"
         />
       </div>
       <Button type="submit">Submit Claim</Button>

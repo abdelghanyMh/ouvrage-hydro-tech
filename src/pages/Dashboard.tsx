@@ -1,14 +1,16 @@
 // src/pages/Dashboard.tsx
-import React from "react";
-import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
-  CardTitle,
+  CardTitle
 } from "@/components/ui/card";
+import React from "react";
+import { Link } from "react-router-dom";
+import feedbackImage from "../assets/feedback.webp"; // Example image
+import incidentImage from "../assets/icident.webp"; // Example image
+import pumpStationImage from "../assets/pump-station.webp"; // Example image
 
 const Dashboard: React.FC = () => {
   return (
@@ -16,34 +18,59 @@ const Dashboard: React.FC = () => {
       <Card>
         <Link to="/pump-scheduler" className="block p-6">
           <CardHeader>
-            <CardTitle>Pump Scheduler</CardTitle>
+            <CardTitle className="text-xl font-semibold mb-2">
+              Pump Scheduler
+            </CardTitle>
             <CardDescription>
               Manage and schedule pump station operations.
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <p>Manage and schedule pump station operations.</p>
+            <img
+              src={pumpStationImage}
+              alt="Pump Station Scheduler"
+              className="mb-4 w-full h-48 object-cover rounded-md"
+            />
           </CardContent>
-          <CardFooter>
-            <p>Card Footer</p>
-          </CardFooter>
         </Link>
       </Card>
 
       <Card>
         <Link to="/incident-detection" className="block p-6">
-          <h2 className="text-xl font-semibold mb-2">
-            Incident & Anomaly Detection
-          </h2>
-          <p>Monitor real-time data and detect anomalies.</p>
+          <CardHeader>
+            <CardTitle className="text-xl font-semibold mb-2">
+              Incident & Anomaly Detection
+            </CardTitle>
+            <CardDescription>
+              Monitor real-time data and detect anomalies.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <img
+              src={incidentImage}
+              alt="Pump Station Scheduler"
+              className="mb-4 w-full h-48 object-cover rounded-md"
+            />
+          </CardContent>
         </Link>
       </Card>
       <Card>
         <Link to="/client-feedback" className="block p-6">
-          <h2 className="text-xl font-semibold mb-2">
-            Client Feedback & Claims
-          </h2>
-          <p>View and manage client feedback and claims.</p>
+          <CardHeader>
+            <CardTitle className="text-xl font-semibold mb-2">
+              Client Feedback & Claims
+            </CardTitle>
+            <CardDescription>
+              View and manage client feedback and claims.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <img
+              src={feedbackImage}
+              alt="Pump Station Scheduler"
+              className="mb-4 w-full h-48 object-cover rounded-md"
+            />
+          </CardContent>
         </Link>
       </Card>
     </div>

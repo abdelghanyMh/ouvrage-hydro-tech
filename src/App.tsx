@@ -9,10 +9,11 @@ import Login from "./pages/Login";
 import { AuthContext, AuthProvider } from "./context/AuthContext";
 import Navbar from "./components/Navbar";
 import PumpStationsPage from "./pages/PumpStationsPage";
+import Home from "./pages/home";
 
 const ProtectedRoute: React.FC<{ children: JSX.Element }> = ({ children }) => {
   const { user } = useContext(AuthContext);
-  return user ? children : <Navigate to="/login" />;
+  return user ? children : <Navigate to="/home" />;
 };
 
 const App = () => {
@@ -20,6 +21,8 @@ const App = () => {
     <AuthProvider>
       <Navbar />
       <Routes>
+        <Route path="/home" element={<Home />} />
+
         <Route
           path="/"
           element={
@@ -28,7 +31,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-         <Route
+        <Route
           path="/pump-stations"
           element={
             <ProtectedRoute>
@@ -52,14 +55,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-        <Route
-          path="/client-feedback"
-          element={
-            <ProtectedRoute>
-              <ClientFeedback />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/client-feedback" element={<ClientFeedback />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </AuthProvider>

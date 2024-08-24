@@ -28,6 +28,7 @@ const FeedbackForm: React.FC = () => {
       <div>
         <Label htmlFor="clientName">Name</Label>
         <Input
+        className="w-[500px]"
           id="clientName"
           type="text"
           value={clientName}
@@ -38,6 +39,8 @@ const FeedbackForm: React.FC = () => {
       <div>
         <Label htmlFor="message">Feedback</Label>
         <Textarea
+                className="w-[500px]"
+
           id="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}

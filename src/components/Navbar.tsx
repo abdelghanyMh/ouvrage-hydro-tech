@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { AuthContext } from "@/context/AuthContext";
+import { Droplet } from "lucide-react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
@@ -11,7 +12,8 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-800 p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white text-lg font-bold">
+        <div className="text-white text-lg font-bold flex gap-1 items-center flex-nowrap">
+          <Droplet />
           <Link to="/">Hydro Tech</Link>
         </div>
 
@@ -47,11 +49,19 @@ const Navbar = () => {
               </Button>
             </>
           ) : (
-            <Button asChild>
-              <Link to="/login" className="text-white">
-                Login
+            <>
+              <Link
+                to="/client-feedback"
+                className="text-gray-300 hover:text-white"
+              >
+                Client Feedback
               </Link>
-            </Button>
+              <Button asChild>
+                <Link to="/login" className="text-white">
+                  Login
+                </Link>
+              </Button>
+            </>
           )}
         </div>
       </div>

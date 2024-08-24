@@ -1,32 +1,33 @@
 // src/pages/ClientFeedback.tsx
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import FeedbackForm from "../components/FeedbackForm";
 import ClaimsForm from "../components/ClaimsForm";
 import FeedbackList from "../components/FeedbackList";
-import { Button } from "@/components/ui/button";
-[];
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { AuthContext } from "@/context/AuthContext";
+
 const ClientFeedback: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<"feedback" | "claims">("feedback");
+  const { user } = useContext(AuthContext);
 
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-bold mb-6">Client Feedback and Claims</h1>
-      <div className="flex space-x-4 mb-6">
-        <Button
-          variant={activeTab === "feedback" ? "default" : "ghost"}
-          onClick={() => setActiveTab("feedback")}
-        >
-          Feedback
-        </Button>
-        <Button
-          variant={activeTab === "claims" ? "default" : "ghost"}
-          onClick={() => setActiveTab("claims")}
-        >
-          Claims
-        </Button>
-      </div>
-      {activeTab === "feedback" ? <FeedbackForm /> : <ClaimsForm />}
-      <FeedbackList />
+      <h1 className="text-xl font-bold mb-6">Client Feedback and Claims</h1>
+      {user ? (
+        <FeedbackList />
+      ) : (
+        <Tabs defaultValue="feedback" className="mb-6 flex flex-col items-center justify-center w-full" >
+          <TabsList>
+            <TabsTrigger value="feedback" className="text-base font-bold ">Feedback</TabsTrigger>
+            <TabsTrigger value="claims"  className="text-base font-bold ">Claims</TabsTrigger>
+          </TabsList>
+          <TabsContent value="feedback">
+            <FeedbackForm />
+          </TabsContent>
+          <TabsContent value="claims">
+            <ClaimsForm />
+          </TabsContent>
+        </Tabs>
+      )}
     </div>
   );
 };
