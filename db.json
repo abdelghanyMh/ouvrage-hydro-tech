@@ -1,0 +1,40 @@
+{
+  "pumpStations": [
+    {
+      "id": "1",
+      "name": "Station A",
+      "location": "Location A",
+      "schedule": [
+        {
+          "date": "2024-07-31",
+          "startTime": "10:22",
+          "endTime": "10:26"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Station B",
+      "location": "Location B",
+      "schedule": [
+        {
+          "date": "2024-08-24",
+          "startTime": "10:15",
+          "endTime": "10:16"
+        },
+        {
+          "date": "2024-08-30",
+          "startTime": "10:21",
+          "endTime": "10:23"
+        },
+        {
+          "date": "2024-08-30",
+          "startTime": "10:22",
+          "endTime": "10:25"
+        }
+      ]
+    }
+  ],
+  "incidents": [],
+  "feedback": []
+}
