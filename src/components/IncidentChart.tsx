@@ -23,8 +23,9 @@ const IncidentChart: React.FC = () => {
   const { stations } = useContext(AuthContext);
   let names: string[] = [];
 
+  names = getNames(stations);
+
   useEffect(() => {
-    names = getNames(stations);
     const interval = setInterval(() => {
       const newPoint = Math.random() * 100;
       setDataPoints((prev) => [...prev.slice(-19), newPoint]);
@@ -33,11 +34,11 @@ const IncidentChart: React.FC = () => {
         new Date().toLocaleTimeString(),
       ]);
       if (newPoint > 80) {
-        const tmp = getRandomItem(names);
-        console.log(tmp);
-
         const name = getRandomItem(names);
 
+        toast.error(`${name}- Value: ${newPoint}`, {
+          duration: 1000, // duration in milliseconds
+        });
         setAnomalies((prev) => [...prev, { name: name, value: newPoint }]);
       }
     }, 1000);
@@ -66,9 +67,6 @@ const IncidentChart: React.FC = () => {
           <h2 className="text-red-600 font-semibold">Anomalies Detected</h2>
           <ul className="list-disc ml-5">
             {anomalies.map(({ name, value }, index) => {
-              {
-                toast.error(`${name}- Value: ${value.toFixed(2)}`);
-              }
               return (
                 <>
                   <li key={index}>
@@ -80,7 +78,7 @@ const IncidentChart: React.FC = () => {
           </ul>
         </div>
       )}
-      <Toaster position="top-right" reverseOrder={false}  gutter={1}/>
+      <Toaster position="top-right" reverseOrder={false} />
     </div>
   );
 };

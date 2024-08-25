@@ -5,7 +5,7 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import {
   Table,
@@ -21,7 +21,6 @@ import React, { useContext, useEffect } from "react";
 import ScheduleForm from "./ScheduleForm";
 import { Button } from "./ui/button";
 import { PumpStation } from "./types";
-
 
 interface Props {
   onSelect: (station: PumpStation) => void;
@@ -50,7 +49,6 @@ const PumpStationTable: React.FC<Props> = ({ onSelect }) => {
 
   const refreshStation = async () => {
     fetchStations();
-    
   };
 
   return (
@@ -80,13 +78,18 @@ const PumpStationTable: React.FC<Props> = ({ onSelect }) => {
               <TableCell>
                 <Dialog>
                   <DialogTrigger asChild>
-                    <Button variant="outline">Edit</Button>
+                    <Button
+                      variant="outline"
+                      className="mr-3 bg-green-300 hover:bg-green-100"
+                    >
+                      Create
+                    </Button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[425px]">
                     <DialogHeader>
-                      <DialogTitle>Edit Schedule</DialogTitle>
+                      <DialogTitle>Create Schedule</DialogTitle>
                       <DialogDescription>
-                        Make changes to Scheduled Operations.
+                        Create a new Schedule for pump station.
                       </DialogDescription>
                     </DialogHeader>
                     <div className="grid gap-4 py-4">

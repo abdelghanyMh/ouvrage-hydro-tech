@@ -5,11 +5,23 @@
       "name": "Station A",
       "location": "Location A",
       "schedule": [
-        {
-          "date": "2024-07-31",
-          "startTime": "10:22",
-          "endTime": "10:26"
-        }
+        [
+          {
+            "date": "2024-07-31",
+            "startTime": "10:22",
+            "endTime": "10:26"
+          },
+          {
+            "date": "2024-08-03",
+            "startTime": "10:22",
+            "endTime": "10:26"
+          },
+          {
+            "date": "2024-10-25",
+            "startTime": "10:22",
+            "endTime": "10:26"
+          }
+        ]
       ]
     },
     {
@@ -31,6 +43,39 @@
           "date": "2024-08-30",
           "startTime": "10:22",
           "endTime": "10:25"
+        }
+      ]
+    },
+    {
+      "id": "K6I",
+      "name": "test",
+      "location": "test",
+      "schedule": []
+    },
+    {
+      "id": "FmD",
+      "name": "test",
+      "location": "test",
+      "schedule": [
+        {
+          "date": "2024-08-31",
+          "startTime": "20:36",
+          "endTime": "20:37"
+        },
+        {
+          "date": "2024-08-30",
+          "startTime": "20:36",
+          "endTime": "20:37"
+        },
+        {
+          "date": "2024-11-28",
+          "startTime": "20:36",
+          "endTime": "20:37"
+        },
+        {
+          "date": "2024-08-31",
+          "startTime": "20:36",
+          "endTime": "20:37"
         }
       ]
     }

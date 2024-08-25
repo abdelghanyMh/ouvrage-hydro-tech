@@ -8,7 +8,6 @@ import toast, { Toaster } from "react-hot-toast";
 import { format } from "date-fns";
 import { PumpStation } from "@/components/types";
 
-
 const PumpScheduler: React.FC = () => {
   const [selectedStation, setSelectedStation] = useState<PumpStation | null>(
     null
@@ -48,7 +47,11 @@ const PumpScheduler: React.FC = () => {
                 <div className="ml-3 flex-1">
                   <div>
                     <p className="text-sm font-medium text-gray-900">
-                      Schedule :  <span className="uppercase text-destructive italic underline px-3">{stationName}</span>  was Deleted
+                      Schedule :{" "}
+                      <span className="uppercase text-destructive italic underline px-3">
+                        {stationName}
+                      </span>{" "}
+                      was Deleted
                     </p>
                   </div>
                   <p className="mt-1 text-sm text-gray-500">
@@ -88,7 +91,7 @@ const PumpScheduler: React.FC = () => {
             {selectedStation.name} - {selectedStation.location}
           </h2>
           <ScheduleList
-            schedules={selectedStation.schedule}
+            selectedStation={selectedStation}
             onDelete={handleDeleteSchedule}
           />
         </div>
