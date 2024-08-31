@@ -4,10 +4,12 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { PumpStation } from "./types";
 import { AuthContext } from "@/context/AuthContext";
+
 const CreatePumpStationForm: React.FC = () => {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
   const { addStation } = useContext(AuthContext);
+
   const generateRandomId = (): string => {
     const characters =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -18,6 +20,7 @@ const CreatePumpStationForm: React.FC = () => {
     }
     return result;
   };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const newStation: PumpStation = {
@@ -32,7 +35,7 @@ const CreatePumpStationForm: React.FC = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <Label htmlFor="name">Station Name</Label>
+        <Label htmlFor="name">Nom de la station</Label>
         <Input
           id="name"
           type="text"
@@ -42,7 +45,7 @@ const CreatePumpStationForm: React.FC = () => {
         />
       </div>
       <div>
-        <Label htmlFor="location">Location</Label>
+        <Label htmlFor="location">Emplacement</Label>
         <Input
           id="location"
           type="text"
@@ -52,7 +55,7 @@ const CreatePumpStationForm: React.FC = () => {
         />
       </div>
       <Button type="submit" variant="default">
-        Create Pump Station
+        Créer la station de pompage
       </Button>
     </form>
   );

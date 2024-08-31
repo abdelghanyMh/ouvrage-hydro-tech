@@ -1,4 +1,3 @@
-// src/components/StationList.tsx
 import {
   Dialog,
   DialogContent,
@@ -41,16 +40,16 @@ const StationList = () => {
 
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-bold mb-6">Pump Station Manager</h1>
+      <h1 className="text-2xl font-bold mb-6">Gestion des Stations de Pompe</h1>
 
       <Table>
-        <TableCaption>A list of Pump Station .</TableCaption>
+        <TableCaption>Liste des Stations de Pompe.</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">ID</TableHead>
-            <TableHead>Name</TableHead>
-            <TableHead>Location</TableHead>
-            <TableHead>Current Schedule</TableHead>
+            <TableHead>Nom</TableHead>
+            <TableHead>Emplacement</TableHead>
+            <TableHead>Planning Actuel</TableHead>
             <TableHead>Actions</TableHead>
           </TableRow>
         </TableHeader>
@@ -63,20 +62,21 @@ const StationList = () => {
               <TableCell>
                 {station.schedule.length > 0
                   ? `${station.schedule[0].startTime} - ${station.schedule[0].endTime}`
-                  : "No Schedule"}
+                  : "Pas de Planning"}
               </TableCell>
               <TableCell>
                 <Dialog>
                   <DialogTrigger asChild>
                     <Button variant="default" className="mr-3">
-                      Edit
+                      Modifier
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[425px]">
                     <DialogHeader>
-                      <DialogTitle>Edit Pump Station</DialogTitle>
+                      <DialogTitle>Modifier la Station de Pompe</DialogTitle>
                       <DialogDescription>
-                        Make changes to Pump Station info.
+                        Apportez des modifications aux informations de la
+                        station de pompe.
                       </DialogDescription>
                     </DialogHeader>
                     <div className="grid gap-4 py-4">
@@ -86,29 +86,29 @@ const StationList = () => {
                 </Dialog>
                 <AlertDialog>
                   <AlertDialogTrigger>
-                    <Button variant="destructive">Delete</Button>
+                    <Button variant="destructive">Supprimer</Button>
                   </AlertDialogTrigger>
                   <AlertDialogContent>
                     <AlertDialogHeader>
                       <AlertDialogTitle>
-                        Are you absolutely sure?
+                        Êtes-vous absolument sûr ?
                       </AlertDialogTitle>
                       <AlertDialogDescription>
-                        This action cannot be undone. This will permanently
-                        Delete{" "}
+                        Cette action est irréversible. Cela supprimera
+                        définitivement{" "}
                         <span className="uppercase text-destructive font-bold underline px-1">
                           {station.name}
                         </span>
-                        Pump Station
+                        Station de Pompe
                       </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
-                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogCancel>Annuler</AlertDialogCancel>
                       <AlertDialogAction
                         className="!bg-destructive"
                         onClick={() => deleteStation(station.id)}
                       >
-                        Delete
+                        Supprimer
                       </AlertDialogAction>
                     </AlertDialogFooter>
                   </AlertDialogContent>
@@ -119,7 +119,9 @@ const StationList = () => {
         </TableBody>
         <TableFooter className="bg-slate-50">
           <TableRow>
-            <TableCell colSpan={4}>Create new Pump station</TableCell>
+            <TableCell colSpan={4}>
+              Créer une nouvelle Station de Pompe
+            </TableCell>
             <TableCell>
               <Dialog>
                 <DialogTrigger asChild>
@@ -127,14 +129,14 @@ const StationList = () => {
                     variant="secondary"
                     className="mr-3 bg-green-300 hover:bg-green-100"
                   >
-                    Create
+                    Créer
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
                   <DialogHeader>
-                    <DialogTitle>Edit Pump Station</DialogTitle>
+                    <DialogTitle>Créer une Station de Pompe</DialogTitle>
                     <DialogDescription>
-                      Make changes to Pump Station info.
+                      Ajoutez une nouvelle station de pompe.
                     </DialogDescription>
                   </DialogHeader>
                   <div className="grid gap-4 py-4">

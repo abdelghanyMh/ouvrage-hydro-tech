@@ -1,10 +1,10 @@
-// src/components/ClaimsForm.tsx
 import React, { useState } from "react";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+
 const ClaimsForm: React.FC = () => {
   const [clientName, setClientName] = useState("");
   const [email, setEmail] = useState("");
@@ -12,22 +12,22 @@ const ClaimsForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const claimData = { clientName, email, claim, status: "Pending" };
+    const claimData = { clientName, email, claim, status: "En attente" };
     try {
       await axios.post("http://localhost:5000/feedback", claimData);
       setClientName("");
       setEmail("");
       setClaim("");
-      alert("Claim submitted successfully!");
+      alert("Réclamation soumise avec succès !");
     } catch (error) {
-      console.error("Error submitting claim:", error);
+      console.error("Erreur lors de la soumission de la réclamation :", error);
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 max-w-md">
       <div>
-        <Label htmlFor="clientName">Name</Label>
+        <Label htmlFor="clientName">Nom</Label>
         <Input
           id="clientName"
           type="text"
@@ -49,7 +49,7 @@ const ClaimsForm: React.FC = () => {
         />
       </div>
       <div>
-        <Label htmlFor="claim">Claim</Label>
+        <Label htmlFor="claim">Réclamation</Label>
         <Textarea
           id="claim"
           value={claim}
@@ -58,7 +58,7 @@ const ClaimsForm: React.FC = () => {
           className="w-[500px]"
         />
       </div>
-      <Button type="submit">Submit Claim</Button>
+      <Button type="submit">Soumettre la réclamation</Button>
     </form>
   );
 };

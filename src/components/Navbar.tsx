@@ -1,5 +1,3 @@
-// src/components/Navbar.tsx
-
 import { Button } from "@/components/ui/button";
 import { AuthContext } from "@/context/AuthContext";
 import { Droplet } from "lucide-react";
@@ -21,31 +19,31 @@ const Navbar = () => {
           {user ? (
             <>
               <Link
-                to="/pump-stations "
+                to="/pump-stations"
                 className="text-gray-300 hover:text-white"
               >
-                Pump Stations
+                Stations de Pompage
               </Link>
               <Link
                 to="/pump-scheduler"
                 className="text-gray-300 hover:text-white"
               >
-                Pump Scheduler
+                Planificateur de Pompes
               </Link>
               <Link
                 to="/incident-detection"
                 className="text-gray-300 hover:text-white"
               >
-                Incident Detection
+                Détection d'Incidents
               </Link>
               <Link
                 to="/client-feedback"
                 className="text-gray-300 hover:text-white"
               >
-                Client Feedback
+                Retour des Clients
               </Link>
               <Button variant={"secondary"} onClick={() => logout()}>
-                logout
+                Déconnexion
               </Button>
             </>
           ) : (
@@ -54,11 +52,11 @@ const Navbar = () => {
                 to="/client-feedback"
                 className="text-gray-300 hover:text-white"
               >
-                Client Feedback
+                Retour des Clients
               </Link>
               <Button asChild>
                 <Link to="/login" className="text-white">
-                  Login
+                  Connexion
                 </Link>
               </Button>
             </>
@@ -68,6 +66,5 @@ const Navbar = () => {
     </nav>
   );
 };
-[];
 
 export default Navbar;

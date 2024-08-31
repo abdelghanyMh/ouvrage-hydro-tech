@@ -1,12 +1,9 @@
-// src/components/ScheduleForm.tsx
 import React, { useState } from "react";
 import axios from "axios";
-import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 import { PumpStation } from "./types";
-
-
 
 interface Props {
   station: PumpStation;
@@ -25,17 +22,16 @@ const ScheduleForm: React.FC<Props> = ({ station, onUpdate }) => {
       await axios.patch(`http://localhost:5000/pumpStations/${station.id}`, {
         schedule: [...station.schedule, newSchedule],
       });
-      
+
       onUpdate();
-      console.log("updatedSchedules");
+      console.log("Horaires mis à jour");
       setDate("");
       setStartTime("");
       setEndTime("");
     } catch (error) {
-      console.error("Error updating schedule:", error);
+      console.error("Erreur lors de la mise à jour de l'horaire :", error);
     }
   };
-  
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -50,7 +46,7 @@ const ScheduleForm: React.FC<Props> = ({ station, onUpdate }) => {
         />
       </div>
       <div>
-        <Label htmlFor="startTime">Start Time</Label>
+        <Label htmlFor="startTime">Heure de Début</Label>
         <Input
           id="startTime"
           type="time"
@@ -60,7 +56,7 @@ const ScheduleForm: React.FC<Props> = ({ station, onUpdate }) => {
         />
       </div>
       <div>
-        <Label htmlFor="endTime">End Time</Label>
+        <Label htmlFor="endTime">Heure de Fin</Label>
         <Input
           id="endTime"
           type="time"
@@ -69,8 +65,9 @@ const ScheduleForm: React.FC<Props> = ({ station, onUpdate }) => {
           required
         />
       </div>
-      <Button type="submit" variant="default">Save Schedule</Button>
-
+      <Button type="submit" variant="default">
+        Enregistrer l'Horaire
+      </Button>
     </form>
   );
 };

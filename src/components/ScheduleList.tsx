@@ -1,4 +1,3 @@
-// src/components/ScheduleList.tsx
 import React from "react";
 import { format } from "date-fns";
 import { PumpStation } from "./types";
@@ -21,9 +20,9 @@ interface Props {
 const ScheduleList: React.FC<Props> = ({ selectedStation, onDelete }) => {
   return (
     <div className="mt-4">
-      <h2 className="text-lg font-semibold mb-2">Scheduled Operations</h2>
+      <h2 className="text-lg font-semibold mb-2">Opérations Planifiées</h2>
       {selectedStation.schedule.length === 0 ? (
-        <p>No schedules available.</p>
+        <p>Aucun horaire disponible.</p>
       ) : (
         <ul className="space-y-2">
           {selectedStation.schedule.map((schedule, index) => (
@@ -33,25 +32,25 @@ const ScheduleList: React.FC<Props> = ({ selectedStation, onDelete }) => {
             >
               <div>
                 <p>
-                  <strong>Date:</strong>{" "}
+                  <strong>Date :</strong>{" "}
                   {format(new Date(schedule.date), "PPP")}
                 </p>
                 <p>
-                  <strong>Time:</strong> {schedule.startTime} -{" "}
+                  <strong>Heure :</strong> {schedule.startTime} -{" "}
                   {schedule.endTime}
                 </p>
               </div>
               <Dialog>
                 <DialogTrigger asChild>
                   <Button variant="default" className="mr-3">
-                    Edit
+                    Modifier
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
                   <DialogHeader>
-                    <DialogTitle>Edit Pump Station</DialogTitle>
+                    <DialogTitle>Modifier le Planning</DialogTitle>
                     <DialogDescription>
-                      Make changes to Pump Station info.
+                      Apportez des modifications aux informations du planning.
                     </DialogDescription>
                   </DialogHeader>
                   <div className="grid gap-4 py-4">
@@ -67,7 +66,7 @@ const ScheduleList: React.FC<Props> = ({ selectedStation, onDelete }) => {
                 onClick={() => onDelete(index)}
                 className="text-red-500 hover:underline"
               >
-                Delete
+                Supprimer
               </button>
             </li>
           ))}

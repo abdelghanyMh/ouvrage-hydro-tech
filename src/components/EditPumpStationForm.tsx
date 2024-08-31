@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { AuthContext } from "@/context/AuthContext";
 import React, { useContext, useEffect, useState } from "react";
 import { PumpStation } from "./types";
+
 interface EditPumpStationFormProps {
   station: PumpStation;
 }
@@ -36,7 +37,7 @@ const EditPumpStationForm: React.FC<EditPumpStationFormProps> = ({
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <Label htmlFor="name">Station Name</Label>
+        <Label htmlFor="name">Nom de la station</Label>
         <Input
           id="name"
           type="text"
@@ -46,7 +47,7 @@ const EditPumpStationForm: React.FC<EditPumpStationFormProps> = ({
         />
       </div>
       <div>
-        <Label htmlFor="location">Location</Label>
+        <Label htmlFor="location">Emplacement</Label>
         <Input
           id="location"
           type="text"
@@ -57,7 +58,7 @@ const EditPumpStationForm: React.FC<EditPumpStationFormProps> = ({
       </div>
 
       <Button type="submit" variant="default">
-        Save Changes
+        Enregistrer les modifications
       </Button>
     </form>
   );

@@ -1,4 +1,3 @@
-// src/components/FeedbackList.tsx
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { MessageCircleWarning, MessageSquareQuote } from "lucide-react";
@@ -24,17 +23,17 @@ const FeedbackList: React.FC = () => {
       const response = await axios.get("http://localhost:5000/feedback");
       setFeedbacks(response.data);
     } catch (error) {
-      console.error("Error fetching feedbacks:", error);
+      console.error("Erreur lors de la récupération des retours :", error);
     }
   };
 
   return (
-    <div className="mt-8 ">
+    <div className="mt-8">
       <h2 className="text-xl font-semibold mb-4">
-        Submitted Feedback and Claims
+        Retours et réclamations soumis
       </h2>
       {feedbacks.length === 0 ? (
-        <p>No feedbacks or claims submitted yet.</p>
+        <p>Aucun retour ou réclamation soumis pour l'instant.</p>
       ) : (
         <ul className="space-y-4">
           {feedbacks.map((fb) => (
@@ -43,25 +42,25 @@ const FeedbackList: React.FC = () => {
               {fb.claim && <MessageCircleWarning />}
 
               <p>
-                <strong>Name:</strong> {fb.clientName}
+                <strong>Nom :</strong> {fb.clientName}
               </p>
               {fb.email && (
                 <p>
-                  <strong>Email:</strong> {fb.email}
+                  <strong>Email :</strong> {fb.email}
                 </p>
               )}
               {fb.message && (
                 <p>
-                  <strong>Feedback:</strong> {fb.message}
+                  <strong>Retour :</strong> {fb.message}
                 </p>
               )}
               {fb.claim && (
                 <p>
-                  <strong>Claim:</strong> {fb.claim}
+                  <strong>Réclamation :</strong> {fb.claim}
                 </p>
               )}
               <p>
-                <strong>Status:</strong> {fb.status}
+                <strong>Status :</strong> {fb.status}
               </p>
             </li>
           ))}
@@ -72,4 +71,3 @@ const FeedbackList: React.FC = () => {
 };
 
 export default FeedbackList;
-[];

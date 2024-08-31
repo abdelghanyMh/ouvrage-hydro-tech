@@ -78,8 +78,28 @@
           "endTime": "20:37"
         }
       ]
+    },
+    {
+      "id": "Osn",
+      "name": "nom ",
+      "location": "location",
+      "schedule": []
     }
   ],
   "incidents": [],
-  "feedback": []
+  "feedback": [
+    {
+      "id": "47ed",
+      "clientName": "nome feedback",
+      "message": "text ",
+      "status": "Pending"
+    },
+    {
+      "id": "833d",
+      "clientName": "reclamation nom ",
+      "email": "test@gmil.com",
+      "claim": "reclamation text",
+      "status": "Pending"
+    }
+  ]
 }

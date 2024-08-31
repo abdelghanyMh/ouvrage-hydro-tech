@@ -1,4 +1,3 @@
-// src/components/PumpStationTable.tsx
 import {
   Dialog,
   DialogContent,
@@ -27,25 +26,11 @@ interface Props {
 }
 
 const PumpStationTable: React.FC<Props> = ({ onSelect }) => {
-  // const [stations, setStations] = useState<PumpStation[]>([]);
   const { stations, fetchStations } = useContext(AuthContext);
-
-  // const [selectedStation, setSelectedStation] = useState<PumpStation | null>(
-  //   null
-  // );
 
   useEffect(() => {
     fetchStations();
   }, []);
-
-  // const fetchStations = async () => {
-  //   try {
-  //     const response = await axios.get("http://localhost:5000/pumpStations");
-  //     setStations(response.data);
-  //   } catch (error) {
-  //     console.error("Error fetching pump stations:", error);
-  //   }
-  // };
 
   const refreshStation = async () => {
     fetchStations();
@@ -54,13 +39,13 @@ const PumpStationTable: React.FC<Props> = ({ onSelect }) => {
   return (
     <div className="p-8">
       <Table>
-        <TableCaption>A list of Pump Station Table.</TableCaption>
+        <TableCaption>Liste des Stations de Pompe.</TableCaption>
         <TableHeader>
           <TableRow>
             <TableHead className="w-[100px]">ID</TableHead>
-            <TableHead>Name</TableHead>
+            <TableHead>Nom</TableHead>
             <TableHead>Location</TableHead>
-            <TableHead>Current Schedule</TableHead>
+            <TableHead>Horaire Actuel</TableHead>
             <TableHead>Actions</TableHead>
           </TableRow>
         </TableHeader>
@@ -73,7 +58,7 @@ const PumpStationTable: React.FC<Props> = ({ onSelect }) => {
               <TableCell>
                 {station.schedule.length > 0
                   ? `${station.schedule[0].startTime} - ${station.schedule[0].endTime}`
-                  : "No Schedule"}
+                  : "Pas d'Horaire"}
               </TableCell>
               <TableCell>
                 <Dialog>
@@ -82,14 +67,14 @@ const PumpStationTable: React.FC<Props> = ({ onSelect }) => {
                       variant="outline"
                       className="mr-3 bg-green-300 hover:bg-green-100"
                     >
-                      Create
+                      Créer
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="sm:max-w-[425px]">
                     <DialogHeader>
-                      <DialogTitle>Create Schedule</DialogTitle>
+                      <DialogTitle>Créer un Horaire</DialogTitle>
                       <DialogDescription>
-                        Create a new Schedule for pump station.
+                        Créez un nouvel horaire pour la station de pompe.
                       </DialogDescription>
                     </DialogHeader>
                     <div className="grid gap-4 py-4">

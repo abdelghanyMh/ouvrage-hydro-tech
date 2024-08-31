@@ -1,4 +1,3 @@
-// src/components/EditScheduleForm .tsx
 import React, { useState } from "react";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
@@ -41,12 +40,12 @@ const EditScheduleForm: React.FC<Props> = ({
       });
 
       onUpdate();
-      console.log("updated Schedules");
+      console.log("Horaires mis à jour");
       setDate("");
       setStartTime("");
       setEndTime("");
     } catch (error) {
-      console.error("Error updating schedule:", error);
+      console.error("Erreur lors de la mise à jour de l'horaire :", error);
     }
   };
 
@@ -63,7 +62,7 @@ const EditScheduleForm: React.FC<Props> = ({
         />
       </div>
       <div>
-        <Label htmlFor="startTime">Start Time</Label>
+        <Label htmlFor="startTime">Heure de début</Label>
         <Input
           id="startTime"
           type="time"
@@ -73,7 +72,7 @@ const EditScheduleForm: React.FC<Props> = ({
         />
       </div>
       <div>
-        <Label htmlFor="endTime">End Time</Label>
+        <Label htmlFor="endTime">Heure de fin</Label>
         <Input
           id="endTime"
           type="time"
@@ -83,7 +82,7 @@ const EditScheduleForm: React.FC<Props> = ({
         />
       </div>
       <Button type="submit" variant="default">
-        Save Schedule
+        Enregistrer l'horaire
       </Button>
     </form>
   );

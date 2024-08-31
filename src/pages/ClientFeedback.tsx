@@ -1,4 +1,3 @@
-// src/pages/ClientFeedback.tsx
 import React, { useContext } from "react";
 import FeedbackForm from "../components/FeedbackForm";
 import ClaimsForm from "../components/ClaimsForm";
@@ -11,14 +10,23 @@ const ClientFeedback: React.FC = () => {
 
   return (
     <div className="p-8">
-      <h1 className="text-xl font-bold mb-6">Client Feedback and Claims</h1>
+      <h1 className="text-xl font-bold mb-6">
+        Retours et Réclamations des Clients
+      </h1>
       {user ? (
         <FeedbackList />
       ) : (
-        <Tabs defaultValue="feedback" className="mb-6 flex flex-col items-center justify-center w-full" >
+        <Tabs
+          defaultValue="feedback"
+          className="mb-6 flex flex-col items-center justify-center w-full"
+        >
           <TabsList>
-            <TabsTrigger value="feedback" className="text-base font-bold ">Feedback</TabsTrigger>
-            <TabsTrigger value="claims"  className="text-base font-bold ">Claims</TabsTrigger>
+            <TabsTrigger value="feedback" className="text-base font-bold">
+              Retour
+            </TabsTrigger>
+            <TabsTrigger value="claims" className="text-base font-bold">
+              Réclamation
+            </TabsTrigger>
           </TabsList>
           <TabsContent value="feedback">
             <FeedbackForm />

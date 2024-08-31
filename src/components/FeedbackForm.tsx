@@ -1,4 +1,3 @@
-// src/components/FeedbackForm.tsx
 import React, { useState } from "react";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
@@ -17,18 +16,18 @@ const FeedbackForm: React.FC = () => {
       await axios.post("http://localhost:5000/feedback", feedback);
       setClientName("");
       setMessage("");
-      alert("Feedback submitted successfully!");
+      alert("Retour soumis avec succès !");
     } catch (error) {
-      console.error("Error submitting feedback:", error);
+      console.error("Erreur lors de l'envoi du retour :", error);
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 max-w-md">
       <div>
-        <Label htmlFor="clientName">Name</Label>
+        <Label htmlFor="clientName">Nom</Label>
         <Input
-        className="w-[500px]"
+          className="w-[500px]"
           id="clientName"
           type="text"
           value={clientName}
@@ -37,17 +36,16 @@ const FeedbackForm: React.FC = () => {
         />
       </div>
       <div>
-        <Label htmlFor="message">Feedback</Label>
+        <Label htmlFor="message">Retour</Label>
         <Textarea
-                className="w-[500px]"
-
+          className="w-[500px]"
           id="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
         />
       </div>
-      <Button type="submit">Submit Feedback</Button>
+      <Button type="submit">Soumettre le retour</Button>
     </form>
   );
 };

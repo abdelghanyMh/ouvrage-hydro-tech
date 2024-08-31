@@ -1,4 +1,3 @@
-// src/pages/Login.tsx
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -20,7 +19,7 @@ const Login: React.FC = () => {
     if (success) {
       navigate("/");
     } else {
-      setError("Invalid credentials");
+      setError("Identifiants invalides");
     }
   };
 
@@ -30,11 +29,11 @@ const Login: React.FC = () => {
         onSubmit={handleSubmit}
         className="space-y-4 bg-white p-8 rounded shadow-md"
       >
-        <img src={waterIcon}  className="m-auto"/>
-        <h1 className="text-2xl font-bold mb-4 text-center">Login</h1>
+        <img src={waterIcon} className="m-auto" />
+        <h1 className="text-2xl font-bold mb-4 text-center">Connexion</h1>
         {error && <p className="text-red-500">{error}</p>}
         <div>
-          <Label htmlFor="username">Username</Label>
+          <Label htmlFor="username">Nom d'utilisateur</Label>
           <Input
             id="username"
             type="text"
@@ -44,7 +43,7 @@ const Login: React.FC = () => {
           />
         </div>
         <div>
-          <Label htmlFor="password">Password</Label>
+          <Label htmlFor="password">Mot de passe</Label>
           <Input
             id="password"
             type="password"
@@ -54,7 +53,7 @@ const Login: React.FC = () => {
           />
         </div>
         <Button type="submit" className="w-full">
-          Login
+          Connexion
         </Button>
       </form>
     </div>

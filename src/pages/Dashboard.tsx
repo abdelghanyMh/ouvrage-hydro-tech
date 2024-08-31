@@ -1,16 +1,15 @@
-// src/pages/Dashboard.tsx
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle
+  CardTitle,
 } from "@/components/ui/card";
 import React from "react";
 import { Link } from "react-router-dom";
-import feedbackImage from "../assets/feedback.webp"; // Example image
-import incidentImage from "../assets/icident.webp"; // Example image
-import pumpStationImage from "../assets/pump-station.webp"; // Example image
+import feedbackImage from "../assets/feedback.webp"; // Exemple d'image
+import incidentImage from "../assets/icident.webp"; // Exemple d'image
+import pumpStationImage from "../assets/pump-station.webp"; // Exemple d'image
 
 const Dashboard: React.FC = () => {
   return (
@@ -19,16 +18,16 @@ const Dashboard: React.FC = () => {
         <Link to="/pump-scheduler" className="block p-6">
           <CardHeader>
             <CardTitle className="text-xl font-semibold mb-2">
-              Pump Scheduler
+              Planificateur de Pompes
             </CardTitle>
             <CardDescription>
-              Manage and schedule pump station operations.
+              Gérez et planifiez les opérations des stations de pompage.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <img
               src={pumpStationImage}
-              alt="Pump Station Scheduler"
+              alt="Planificateur de Stations de Pompage"
               className="mb-4 w-full h-48 object-cover rounded-md"
             />
           </CardContent>
@@ -39,35 +38,36 @@ const Dashboard: React.FC = () => {
         <Link to="/incident-detection" className="block p-6">
           <CardHeader>
             <CardTitle className="text-xl font-semibold mb-2">
-              Incident & Anomaly Detection
+              Détection d'Incidents & Anomalies
             </CardTitle>
             <CardDescription>
-              Monitor real-time data and detect anomalies.
+              Surveillez les données en temps réel et détectez les anomalies.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <img
               src={incidentImage}
-              alt="Pump Station Scheduler"
+              alt="Détection d'Incidents"
               className="mb-4 w-full h-48 object-cover rounded-md"
             />
           </CardContent>
         </Link>
       </Card>
+
       <Card>
         <Link to="/client-feedback" className="block p-6">
           <CardHeader>
             <CardTitle className="text-xl font-semibold mb-2">
-              Client Feedback & Claims
+              Retour & Réclamations des Clients
             </CardTitle>
             <CardDescription>
-              View and manage client feedback and claims.
+              Consultez et gérez les retours et réclamations des clients.
             </CardDescription>
           </CardHeader>
           <CardContent>
             <img
               src={feedbackImage}
-              alt="Pump Station Scheduler"
+              alt="Retour & Réclamations des Clients"
               className="mb-4 w-full h-48 object-cover rounded-md"
             />
           </CardContent>
