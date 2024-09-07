@@ -29,7 +29,13 @@ const Login: React.FC = () => {
         onSubmit={handleSubmit}
         className="space-y-4 bg-white p-8 rounded shadow-md"
       >
-        <img src={waterIcon} className="m-auto" />
+        <img
+          src="src/assets/logo_small-removebg-preview.png"
+          alt="logo"
+          width="50"
+          className="m-auto"
+        />
+
         <h1 className="text-2xl font-bold mb-4 text-center">Connexion</h1>
         {error && <p className="text-red-500">{error}</p>}
         <div>

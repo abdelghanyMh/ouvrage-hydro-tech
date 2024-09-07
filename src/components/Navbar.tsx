@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { AuthContext } from "@/context/AuthContext";
-import { Droplet } from "lucide-react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
@@ -8,14 +7,17 @@ const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
 
   return (
-    <nav className="bg-gray-800 p-4">
+    <nav className="bg-[#001740] p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-white text-lg font-bold flex gap-1 items-center flex-nowrap">
-          <Droplet />
-          <Link to="/">Hydro Tech</Link>
+        <div className="text-white text-lg font-bold flex  flex-row gap-1 items-end flex-nowrap justify-end">
+          <img src="src/assets/logo_small.png" alt="logo" width="50" />
+          <Link to="/">
+            {/* image tag display inline with 50px logo_small.pnh */}
+            Ouvrage Hydro Tech
+          </Link>
         </div>
 
-        <div className="flex space-x-4 items-center justify-center">
+        <div className="flex space-x-2 items-center justify-center text-sm">
           {user ? (
             <>
               <Link

@@ -464,12 +464,14 @@ const ContactSection = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-12">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-[#001740] text-white pt-16  ">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <h3 className="text-xl font-semibold mb-4">
-            Informations sur l'entreprise
-          </h3>
+          {/* image tag for logo image with 50px size */}
+          <img src="src/assets/logo.jpg" alt="Logo" className="w-96  " />
+        </div>
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Navigation</h3>
           <ul>
             <li>
               <a href="#" className="hover:underline">
