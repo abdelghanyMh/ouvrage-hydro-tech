@@ -7,9 +7,9 @@ import {
 } from "@/components/ui/card";
 import React from "react";
 import { Link } from "react-router-dom";
-import feedbackImage from "../assets/feedback.webp"; // Exemple d'image
-import incidentImage from "../assets/icident.webp"; // Exemple d'image
-import pumpStationImage from "../assets/pump-station.webp"; // Exemple d'image
+import feedbackImage from "../../public/feedback.webp"; // Exemple d'image
+import incidentImage from "../../public/icident.webp"; // Exemple d'image
+import pumpStationImage from "../../public/pump-station.webp"; // Exemple d'image
 
 const Dashboard: React.FC = () => {
   return (

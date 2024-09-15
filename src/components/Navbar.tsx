@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className="bg-[#001740] p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white text-lg font-bold flex  flex-row gap-1 items-end flex-nowrap justify-end">
-          <img src="src/assets/logo_small.png" alt="logo" width="50" />
+          <img src="../../public/logo_small.png" alt="logo" width="50" />
           <Link to="/">
             {/* image tag display inline with 50px logo_small.pnh */}
             Ouvrage Hydro Tech

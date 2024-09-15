@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import waterManagementImage from "../assets/water-management.webp"; // Example image
+import waterManagementImage from "../../public/water-management.webp"; // Example image
 import {
   Card,
   CardContent,
@@ -26,7 +26,7 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <img
-                src="src/assets/station1.jpg"
+                src="../../public/station1.jpg"
                 alt="Station 1"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <img
-                src="src/assets/station2.webp"
+                src="../../public/station2.webp"
                 alt="Station 2"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <img
-                src="src/assets/station3.webp"
+                src="../../public/station3.webp"
                 alt="Station 3"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
@@ -74,7 +74,7 @@ const Hero = () => {
   return (
     <section className="relative bg-gray-800 text-white">
       <img
-        src="src/assets/hero-image.jpg"
+        src="../../public/hero-image.jpg"
         alt="Hero"
         className="absolute inset-0 w-full h-full object-cover opacity-50"
       />
@@ -96,20 +96,20 @@ const features = [
     id: 1,
     title: "Planificateur de Station de Pompage",
     description: "Gérez et planifiez efficacement les opérations de pompage.",
-    image: "src/assets/pump-station.webp",
+    image: "../../public/pump-station.webp",
   },
   {
     id: 2,
     title: "Détection d'Incidents",
     description:
       "Détection d'anomalies en temps réel dans les systèmes de gestion de l'eau.",
-    image: "src/assets/icident.webp",
+    image: "../../public/icident.webp",
   },
   {
     id: 3,
     title: "Retour d'Information des Clients",
     description: "Collectez et gérez facilement les retours des clients.",
-    image: "src/assets/feedback.webp",
+    image: "../../public/feedback.webp",
   },
 ];
 
@@ -167,7 +167,7 @@ const Testimonials: React.FC = () => {
               <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                 <div className="w-full flex mb-4 items-center">
                   <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-                    <img src="src/assets/avatar-1.jpeg" alt="" />
+                    <img src="../../public/avatar-1.jpeg" alt="" />
                   </div>
                   <div className="flex-grow pl-3">
                     <h6 className="font-bold text-sm uppercase text-gray-600">
@@ -192,7 +192,7 @@ const Testimonials: React.FC = () => {
               <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                 <div className="w-full flex mb-4 items-center">
                   <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-                    <img src="src/assets/avatar-2.jpeg" alt="" />
+                    <img src="../../public/avatar-2.jpeg" alt="" />
                   </div>
                   <div className="flex-grow pl-3">
                     <h6 className="font-bold text-sm uppercase text-gray-600">
@@ -218,7 +218,7 @@ const Testimonials: React.FC = () => {
               <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                 <div className="w-full flex mb-4 items-center">
                   <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-                    <img src="src/assets/avatar-3.jpg" alt="" />
+                    <img src="../../public/avatar-3.jpg" alt="" />
                   </div>
                   <div className="flex-grow pl-3">
                     <h6 className="font-bold text-sm uppercase text-gray-600">
@@ -242,7 +242,7 @@ const Testimonials: React.FC = () => {
               <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                 <div className="w-full flex mb-4 items-center">
                   <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-                    <img src="src/assets/avatar-4.webp" alt="" />
+                    <img src="../../public/avatar-4.webp" alt="" />
                   </div>
                   <div className="flex-grow pl-3">
                     <h6 className="font-bold text-sm uppercase text-gray-600">
@@ -268,7 +268,7 @@ const Testimonials: React.FC = () => {
               <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                 <div className="w-full flex mb-4 items-center">
                   <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-                    <img src="src/assets/avatar-5.webp" alt="" />
+                    <img src="../../public/avatar-5.webp" alt="" />
                   </div>
                   <div className="flex-grow pl-3">
                     <h6 className="font-bold text-sm uppercase text-gray-600">
@@ -292,7 +292,7 @@ const Testimonials: React.FC = () => {
               <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6">
                 <div className="w-full flex mb-4 items-center">
                   <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
-                    <img src="src/assets/avatar-6.jpeg" alt="" />
+                    <img src="../../public/avatar-6.jpeg" alt="" />
                   </div>
                   <div className="flex-grow pl-3">
                     <h6 className="font-bold text-sm uppercase text-gray-600">
@@ -468,7 +468,7 @@ const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           {/* image tag for logo image with 50px size */}
-          <img src="src/assets/logo.jpg" alt="Logo" className="w-96  " />
+          <img src="../../public/logo.jpg" alt="Logo" className="w-96  " />
         </div>
         <div>
           <h3 className="text-xl font-semibold mb-4">Navigation</h3>
@@ -514,17 +514,17 @@ const Footer = () => {
           <h3 className="text-xl font-semibold mb-4">Suivez-nous</h3>
           <div className="flex space-x-4">
             <a href="#">
-              <img src="src/assets/icons8-facebook.svg" alt="Facebook" />
+              <img src="../../public/icons8-facebook.svg" alt="Facebook" />
             </a>
             <a href="#">
               <img
                 className="w-12"
-                src="src/assets/icons8-x.svg"
+                src="../../public/icons8-x.svg"
                 alt="Twitter"
               />
             </a>
             <a href="#">
-              <img src="src/assets/icons8-linkedin.svg" alt="LinkedIn" />
+              <img src="../../public/icons8-linkedin.svg" alt="LinkedIn" />
             </a>
           </div>
         </div>

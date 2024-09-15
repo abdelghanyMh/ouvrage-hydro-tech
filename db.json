@@ -30,11 +30,6 @@
       "location": "Location B",
       "schedule": [
         {
-          "date": "2024-08-24",
-          "startTime": "10:15",
-          "endTime": "10:16"
-        },
-        {
           "date": "2024-08-30",
           "startTime": "10:21",
           "endTime": "10:23"
@@ -43,6 +38,11 @@
           "date": "2024-08-30",
           "startTime": "10:22",
           "endTime": "10:25"
+        },
+        {
+          "date": "2024-09-18",
+          "startTime": "18:07",
+          "endTime": "18:08"
         }
       ]
     },
@@ -83,7 +83,13 @@
       "id": "Osn",
       "name": "nom ",
       "location": "location",
-      "schedule": []
+      "schedule": [
+        {
+          "date": "2024-09-12",
+          "startTime": "19:46",
+          "endTime": "19:46"
+        }
+      ]
     }
   ],
   "incidents": [],
@@ -99,6 +105,12 @@
       "clientName": "reclamation nom ",
       "email": "test@gmil.com",
       "claim": "reclamation text",
+      "status": "Pending"
+    },
+    {
+      "id": "5e4e",
+      "clientName": "fsafddasdfas",
+      "message": "dfsadfa",
       "status": "Pending"
     }
   ]

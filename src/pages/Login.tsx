@@ -29,7 +29,7 @@ const Login: React.FC = () => {
         className="space-y-4 bg-white p-8 rounded shadow-md"
       >
         <img
-          src="src/assets/logo_small-removebg-preview.png"
+          src="../../public/logo_small-removebg-preview.png"
           alt="logo"
           width="50"
           className="m-auto"
